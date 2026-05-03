@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeron James M. Hidalgo</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
+        
+        :root {
+            --teal: #14b8a6;
+        }
+        
+        * {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background-color: #0f766e;
+            transform: translateY(-1px);
+        }
+        
+        .section-box {
+            background: linear-gradient(145deg, #14b8a6, #0f766e);
+            box-shadow: 0 10px 15px -3px rgb(20 184 166);
+        }
+        
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 25px 25px 0 -10px #14b8a6;
+        }
+        
+        .play-button {
+            animation: pulse 2s infinite;
+        }
+        
+        .modal {
+            animation: modalPop 0.3s ease forwards;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .beach-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('https://picsum.photos/id/1015/2000/1200');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .profile-img {
+            border: 8px solid #14b8a6;
+            box-shadow: 0 0 0 8px rgba(20, 184, 166, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-[#0f172a] text-white overflow-x-hidden">
+    <!-- NAVBAR - Updated with new name -->
+    <nav class="bg-[#0f766e] py-4 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-8 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="https://picsum.photos/id/1005/80/80" 
+                     alt="Aeron James" 
+                     class="w-12 h-12 rounded-2xl object-cover profile-img">
+                <div class="hidden md:block">
+                    <h1 class="text-2xl font-semibold tracking-tight">AERON JAMES M. HIDALGO</h1>
+                    <p class="text-xs text-teal-200 -mt-1">Web Developer &amp; Designer</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-3 text-sm font-medium">
+                <a href="#home" onclick="smoothScrollTo('home')" class="nav-link px-6 py-3 bg-[#14b8a6] hover:bg-[#0f766e] text-white rounded-3xl flex items-center gap-2">HOME</a>
+                <a href="#about" onclick="smoothScrollTo('about')" class="nav-link px-6 py-3 bg-[#14b8a6] hover:bg-[#0f766e] text-white rounded-3xl flex items-center gap-2">ABOUT</a>
+                <a href="#projects" onclick="smoothScrollTo('projects')" class="nav-link px-6 py-3 bg-[#14b8a6] hover:bg-[#0f766e] text-white rounded-3xl flex items-center gap-2">PROJECTS</a>
+            </div>
+            
+            <div class="hidden lg:flex items-center gap-3">
+                <img src="https://picsum.photos/id/1016/60/60" alt="Rooster" class="w-12 h-12 rounded-2xl object-cover border-2 border-[#14b8a6] shadow-md">
+                <img src="https://picsum.photos/id/64/60/60" alt="Man" class="w-12 h-12 rounded-2xl object-cover border-2 border-[#14b8a6] shadow-md">
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME SECTION - Profile photo & rectangle box centers aligned -->
+    <section id="home" class="max-w-7xl mx-auto px-8 py-12">
+        <div class="grid md:grid-cols-12 gap-8 items-start">
+            
+            <!-- LEFT COLUMN -->
+            <div class="md:col-span-5 space-y-8">
+                
+                <!-- PROFILE PICTURE -->
+                <div class="relative">
+                    <img src="https://picsum.photos/id/1005/420/420" 
+                         alt="Aeron James M. Hidalgo" 
+                         class="w-full max-w-[290px] mx-auto md:mx-0 md:ml-12 rounded-3xl profile-img shadow-2xl">
+                </div>
+                
+                <!-- TEXT BOX - Rectangle (centers aligned with photo) -->
+                <div class="section-box text-slate-900 rounded-3xl p-8 max-w-[340px] mx-auto md:mx-0 md:ml-6">
+                    <p class="text-lg leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- RIGHT COLUMN - 2x2 grid -->
+            <div class="md:col-span-7">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="aspect-square rounded-3xl overflow-hidden border-4 border-[#14b8a6] shadow-xl">
+                        <img src="https://picsum.photos/id/1016/600/600" alt="Rooster" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="aspect-square rounded-3xl overflow-hidden border-4 border-[#14b8a6] shadow-xl">
+                        <img src="https://picsum.photos/id/64/600/600" alt="Portrait" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="aspect-square rounded-3xl overflow-hidden border-4 border-[#14b8a6] shadow-xl">
+                        <img src="https://picsum.photos/id/29/600/600" alt="Landscape" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="aspect-square rounded-3xl overflow-hidden border-4 border-[#14b8a6] shadow-xl">
+                        <img src="https://picsum.photos/id/201/600/600" alt="Dog" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="beach-bg py-24 relative">
+        <div class="max-w-4xl mx-auto px-8">
+            <div class="section-box rounded-3xl p-10 md:p-14 max-w-2xl mx-auto text-slate-900">
+                <h2 class="text-4xl font-semibold mb-6 tracking-tight">ABOUT ME</h2>
+                <p class="text-lg leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+                <p class="text-lg leading-relaxed mt-6">
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+                    accusantium doloremque laudantium, totam rem aperiam.
+                </p>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0f172a] to-transparent pointer-events-none"></div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="max-w-7xl mx-auto px-8 py-16 bg-[#0f172a]">
+        <div class="flex justify-between items-baseline mb-12">
+            <h2 class="text-5xl font-semibold tracking-tighter bg-[#14b8a6] text-slate-900 px-8 py-3 rounded-3xl inline-block">
+                PROJECTS
+            </h2>
+            <div class="text-teal-300 text-sm font-medium hidden md:block">SCROLL FOR MORE ↓</div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <div onclick="openVideoModal(1)" class="project-card bg-[#1e2937] rounded-3xl overflow-hidden border-4 border-[#14b8a6] cursor-pointer group">
+                <div class="relative">
+                    <img src="https://picsum.photos/id/1009/800/450" alt="Project 1" class="w-full aspect-video object-cover">
+                    <div class="play-button absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/30 transition-all">
+                        <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#14b8a6] ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 4.01V8" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 text-slate-900 bg-[#14b8a6]">
+                    <p class="text-lg leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+            
+            <div onclick="openVideoModal(2)" class="project-card bg-[#1e2937] rounded-3xl overflow-hidden border-4 border-[#14b8a6] cursor-pointer group">
+                <div class="relative">
+                    <img src="https://picsum.photos/id/160/800/450" alt="Project 2" class="w-full aspect-video object-cover">
+                    <div class="play-button absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/30 transition-all">
+                        <div class="w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#14b8a6] ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 4.01V8" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 text-slate-900 bg-[#14b8a6]">
+                    <p class="text-lg leading-relaxed">
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+                        accusantium doloremque laudantium, totam rem aperiam.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+             class="fixed bottom-8 right-8 w-12 h-12 bg-[#14b8a6] hover:bg-teal-300 text-slate-900 rounded-2xl flex items-center justify-center shadow-xl cursor-pointer transition-all hover:scale-110">
+            <span class="text-3xl leading-none mt-1">↑</span>
+        </div>
+    </section>
+
+    <!-- VIDEO MODAL -->
+    <div id="videoModal" onclick="if(event.target === this) closeVideoModal()" 
+         class="hidden fixed inset-0 bg-black/90 z-[9999] flex items-center justify-center">
+        <div class="modal bg-[#0f172a] rounded-3xl max-w-4xl w-full mx-4 overflow-hidden">
+            <div class="p-6 flex justify-end">
+                <button onclick="closeVideoModal()" class="text-4xl text-teal-300 hover:text-white transition-colors">×</button>
+            </div>
+            <div id="modalContent" class="px-6 pb-8"></div>
+        </div>
+    </div>
+
+    <script>
+        function smoothScrollTo(section) {
+            const el = document.getElementById(section);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openVideoModal(videoId) {
+            const modal = document.getElementById('videoModal');
+            const content = document.getElementById('modalContent');
+            
+            content.innerHTML = `
+                <div class="aspect-video bg-black rounded-2xl overflow-hidden">
+                    ${videoId === 1 
+                        ? `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/3JZ4pnN7gm8" frameborder="0" allowfullscreen></iframe>`
+                        : `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9wgxcQ" frameborder="0" allowfullscreen></iframe>`
+                    }
+                </div>
+                <p class="text-center mt-6 text-teal-200 text-sm">Project ${videoId} • Click outside to close</p>
+            `;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.getElementById('modalContent').innerHTML = '';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") {
+                const modal = document.getElementById('videoModal');
+                if (modal && modal.classList.contains('flex')) closeVideoModal();
+            }
+        });
+
+        window.onload = function() {
+            console.log('%c✅ Name updated to Aeron James M. Hidalgo. Layout and alignment preserved.', 
+                       'color: #14b8a6; font-size: 18px; font-weight: bold');
+        };
+    </script>
+</body>
+</html>
